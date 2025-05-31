@@ -1,6 +1,6 @@
-# hugo-theme-in-tui-tive
+# InTUItive (in-tui-tive)
 
-**InTUItive** is the theme I assembled for my blog, starting from the already text-forward theme [flat][^hugo-theme-flat]; in its first iterations here I'm spilling the innards of my personal blog's structure out, because I legitimately just copied the sources to flat into my repo and then just started paring down the structure to my preferred form.
+**InTUItive** is the theme I assembled for my blog, starting from the already text-forward theme flat[^hugo-theme-flat]; in its first iterations here I'm spilling the innards of my personal blog's structure out, because I legitimately just copied the sources to flat into my repo and then just started paring down the structure to my preferred form.
 
 ## Minimalist site structure
 
@@ -11,6 +11,10 @@ I prefer legibility of sources above almost all else. Nested `<div>` elements of
 I set out to ensure that the site was navigable and comprehensible with accessibility tools enabled; I've got Windows Narrator available to me right now, so that's my test-bench, and I aim for full keyboard accessibility of every element.
 
 ## Multi Section Supports (from flat)
+
+> [!NOTE]
+> This is from the previous repo and isn't exactly up to date, but it's mostly correct. I have not
+> yet edited this to match current behavior.
 
 If you use multi sections (with the concept from hugo), the RSS at bottom and *Recent* at side are ready for displaying those content. However, you will need to set up your menu at `config.toml` to point the hyperlink to proper destination.
 
@@ -34,6 +38,6 @@ tag T2: post A
 
 ## Special Thanks
 
-[leafee98](https://leafee98.com/) for the original inspiration with [flat][^hugo-theme-flat]―I was looking for a very text-oriented theme to originally work from, but ideally would already be able to crib off someone's notes for the mode-shifting (light/dark). That theme fit the bill, and provided all the seed concepts I needed.
+[leafee98](https://leafee98.com/) for the original inspiration with flat[^hugo-theme-flat]―I was looking for a very text-oriented theme to originally work from, but ideally would already be able to crib off someone's notes for the mode-shifting (light/dark). That theme fit the bill, and provided all the seed concepts I needed.
 
 [^hugo-theme-flat]: leafee98's [flat theme on github](https://github.com/leafee98/hugo-theme-flat)
