@@ -6,8 +6,8 @@
 {{ with .Params.Title }}<meta name="og:title" content="{{ . | markdownify | plainify | safeHTML }}">{{ end }}
 <meta name="og:site_name" content="{{ .Site.Title }}">
 {{ if isset .Params "serves" }}
-<meta name="og:description" content="{{ with .Params.serves }}serves {{ . }}{{ end -}}
-{{- with .GetTerms "courses" }} | {{if not (eq nil .)}}{{with $x := index . 0}}{{.LinkTitle -}}{{end}}{{end}}{{ end }}">
+<meta name="og:description" content='{{ with .Params.serves }}serves {{ . }}{{ end -}}
+{{- with .GetTerms "courses" }} | {{if not (eq nil .)}}{{with $x := index . 0}}{{.LinkTitle -}}{{end}}{{end}}{{ end }}'>
 {{ else }}
 <meta name="og:description" content="{{ .Summary }}">
 {{ end }}
@@ -28,5 +28,5 @@
 <!-- <link rel="stylesheet" href="{{ "css/solid.min.css" | relURL}}" /> -->
 <link rel="stylesheet" href="{{ $syntaxcss.Permalink }}" />
 <link rel="stylesheet" href="{{ $stylecss.Permalink }}" />
-<!-- Favicon is: Fountain Pen by Soetarman Atmodjo from https://thenounproject.com/browse/icons/term/fountain-pen/ (CC BY 3.0) -->
+{{ with .Site.Params.faviconAttrib }}<!-- Favicon is: {{ . }} -->{{ end }}
 <link rel="shortcut icon" href="{{ $favicon.Permalink }}" type="image/svg+xml" />

@@ -1,11 +1,11 @@
-<section class="side-categories">
+<section class='side-categories'>
     <h2>Categories</h2>
     <hr />
 
     <ul>
         {{ range $key, $_ := .Site.Taxonomies.categories }}
             <li>
-                <a href="{{ "categories/" | relURL }}{{ $key | urlize }}">{{ $key }}({{ .Count }})</a>
+                <a href='{{ "categories/" | relURL }}{{ $key | urlize }}'>{{ $key }}({{ .Count }})</a>
             </li>
         {{ end }}
     </ul>

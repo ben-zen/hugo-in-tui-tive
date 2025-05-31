@@ -1,8 +1,16 @@
-# hugo-theme-blank
+# hugo-theme-in-tui-tive
 
-This is a theme I personally use.
+**InTUItive** is the theme I assembled for my blog, starting from the already text-forward theme [flat][^hugo-theme-flat]; in its first iterations here I'm spilling the innards of my personal blog's structure out, because I legitimately just copied the sources to flat into my repo and then just started paring down the structure to my preferred form.
 
-## Multi Section Supports
+## Minimalist site structure
+
+I prefer legibility of sources above almost all else. Nested `<div>` elements often frustrate me, as they're opaque as to their meaning. I aspired with this theme―at this point it's truly its own theme―to produce HTML so clean it looked hand-written. I feel like I got there: at any point, it's relatively easy to orient yourself in the page layout from current tag or parent tags alone; the rare occasions where you _do_ encounter a `<div>` are almost uniquely there to structure elements that couldn't really be handled any other way.
+
+## Accessibility-first design goals
+
+I set out to ensure that the site was navigable and comprehensible with accessibility tools enabled; I've got Windows Narrator available to me right now, so that's my test-bench, and I aim for full keyboard accessibility of every element.
+
+## Multi Section Supports (from flat)
 
 If you use multi sections (with the concept from hugo), the RSS at bottom and *Recent* at side are ready for displaying those content. However, you will need to set up your menu at `config.toml` to point the hyperlink to proper destination.
 
@@ -26,6 +34,6 @@ tag T2: post A
 
 ## Special Thanks
 
-The wordpress theme [Allium](https://wordpress.org/themes/allium/), and [here](https://templatelens.com/allium/) is its home page. I like this theme very much when I'm using wordpress, but I don't have it on hugo, so I try my best to write a theme similar with it. There are many designs in this theme refers to it.
+[leafee98](https://leafee98.com/) for the original inspiration with [flat][^hugo-theme-flat]―I was looking for a very text-oriented theme to originally work from, but ideally would already be able to crib off someone's notes for the mode-shifting (light/dark). That theme fit the bill, and provided all the seed concepts I needed.
 
-The hugo theme [jane](https://github.com/xianmin/hugo-theme-jane) and [mini](https://github.com/nodejh/hugo-theme-mini/), this is my first time to write a hugo theme, I referred this two themes' project structure and way of handling problems.
+[^hugo-theme-flat]: leafee98's [flat theme on github](https://github.com/leafee98/hugo-theme-flat)
