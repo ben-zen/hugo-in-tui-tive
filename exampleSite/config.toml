@@ -1,5 +1,5 @@
-title = "Flat theme"
-theme = "hugo-theme-flat"
+title = "inTUItive theme"
+theme = "hugo-in-tui-tive"
 themesDir = "../.."
 enableRobotsTXT = true
 hasCJKLanguage = true
@@ -48,9 +48,9 @@ name = "Hugo"
 url = "https://gohugo.io"
 pre = "Powered by <a href=\"https://gohugo.io\">Hugo</a>"
 [[params.footer_rows.items]]
-name = "theme flat"
-url = "https://cgit.leafee98.com/hugo-theme-flat.git"
-pre = "Theme <a href=\"https://cgit.leafee98.com/hugo-theme-flat.git\">hugo-theme-flat</a>"
+name = "inTUItive theme"
+url = "https://github.com/ben-zen/hugo-in-tui-tive/"
+pre = "Theme <a href=\"https://github.com/ben-zen/hugo-in-tui-tive/\">hugo-in-tui-tive</a>"
 
 
 [[menus.main]]

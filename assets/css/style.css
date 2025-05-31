@@ -225,7 +225,7 @@ body > header > .site-title {
 
 /* menus and submenus, hover to display, and setup animation */
 header .menu-item       .sub-menu { visibility: hidden;  opacity: 0; transition: opacity 0.25s, visibility 0.25s; }
-header .menu-item:hover .sub-menu { visibility: visible; opacity: 1; }
+header .menu-item:focus-within .sub-menu { visibility: visible; opacity: 1; }
 header .sub-menu { position: absolute; }
 
 details.menu-item summary::marker {
