@@ -228,6 +228,9 @@ header .menu-item       .sub-menu { visibility: hidden;  opacity: 0; transition:
 header .menu-item:focus-within .sub-menu { visibility: visible; opacity: 1; }
 header .sub-menu { position: absolute; }
 
+details.menu-item {
+  display: inline-block;
+}
 details.menu-item summary::marker {
   content: '↓ ';
 }
@@ -268,11 +271,11 @@ header .menu-item {
   font-weight: bold;
 }
 
-header .menu-item::before {
+header li.menu-item::before {
   content: "[";
 }
 
-header .menu-item::after {
+header li.menu-item::after {
   content: "]"
 }
 
