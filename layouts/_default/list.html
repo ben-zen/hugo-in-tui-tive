@@ -1,0 +1,37 @@
+{{ define "main" }}
+
+<main class="list">
+<header>
+    <h2>{{ .Title }}</h2>
+</header>
+
+{{ .Content }}
+
+<section id="archive">
+    {{ range .Data.Pages.GroupByDate "2006" }}
+        <section class="group">
+            <h3 class="key">
+                {{ .Key }}
+            </h3>
+            <dl>
+            {{ range .Pages }}
+                <dt><time class="date" datetime="{{ .PublishDate }}">{{ .PublishDate.Format "01/02" }}</time></dt>
+                <dd class="title {{- if .Draft }} draft {{- end}}">
+
+                        <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+
+                        {{ with .Params.tags }}
+                            {{ range . }}
+                                <a class="tags" href="{{ "tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+                            {{ end }}
+                        {{ end }}
+                </dd>
+            {{ end }}
+            </dl>
+        </section>
+    {{ end }}
+
+</section>
+</main>
+
+{{ end }}

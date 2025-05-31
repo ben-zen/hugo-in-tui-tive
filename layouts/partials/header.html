@@ -1,0 +1,24 @@
+<header class="header">
+    <a class="site-title" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+
+    <nav>
+        <ul class="menu">
+        {{ range .Site.Menus.main }}
+            <li class="menu-item">
+            {{ if not .Children }}
+                <a href="{{ .URL }}">{{ .Name }}</a>
+            {{ else }}
+                <details class="menu-item">
+                    <summary>{{ .Name }}</summary>
+                    <ul class="sub-menu">
+                    {{ range .Children }}
+                        <li class="menu-item"><a href="{{ .URL }}">{{ .Name }}</a></li>
+                    {{ end }}
+                    </ul>
+                </details>
+            {{ end }}
+            </li>
+        {{ end }}
+        </ul>
+    </nav>
+</header>

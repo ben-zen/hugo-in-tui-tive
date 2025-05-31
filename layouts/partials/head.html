@@ -1,0 +1,32 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+{{ $favicon := resources.Get "images/favicon.svg" | minify }}
+
+{{ with .Params.Title }}<meta name="og:title" content="{{ . | markdownify | plainify | safeHTML }}">{{ end }}
+<meta name="og:site_name" content="{{ .Site.Title }}">
+{{ if isset .Params "serves" }}
+<meta name="og:description" content="{{ with .Params.serves }}serves {{ . }}{{ end -}}
+{{- with .GetTerms "courses" }} | {{if not (eq nil .)}}{{with $x := index . 0}}{{.LinkTitle -}}{{end}}{{end}}{{ end }}">
+{{ else }}
+<meta name="og:description" content="{{ .Summary }}">
+{{ end }}
+<meta name="og:image" content="{{ $favicon.Permalink }}" />
+
+{{ range .AlternativeOutputFormats -}}
+    {{ printf `<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
+{{ end -}}
+
+{{ $syntaxcss := resources.Get "css/syntax.css" | minify }}
+{{ $stylecss := resources.Get "css/style.css" | minify }}
+<!-- This site uses Font Awesome Free v.6.2.1 (https://fontawesome.com/) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/fontawesome.min.css">
+<!-- <link rel="stylesheet" href="{{ "css/fontawesome.min.css" | relURL }}" /> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/brands.min.css" />
+<!-- <link rel="stylesheet" href="{{ "css/brands.min.css" | relURL }}" /> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/solid.min.css" />
+<!-- <link rel="stylesheet" href="{{ "css/solid.min.css" | relURL}}" /> -->
+<link rel="stylesheet" href="{{ $syntaxcss.Permalink }}" />
+<link rel="stylesheet" href="{{ $stylecss.Permalink }}" />
+<!-- Favicon is: Fountain Pen by Soetarman Atmodjo from https://thenounproject.com/browse/icons/term/fountain-pen/ (CC BY 3.0) -->
+<link rel="shortcut icon" href="{{ $favicon.Permalink }}" type="image/svg+xml" />

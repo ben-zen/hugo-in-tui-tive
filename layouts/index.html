@@ -1,0 +1,34 @@
+{{ define "main" }}
+<main class="front-page">
+    <p>Pardon the mess, I'm still wrangling this theme into my preferred form.</p>
+{{ $pages := where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+{{ $paginator := .Paginate $pages }}
+{{ range $paginator.Pages }}
+    <article>
+        <hgroup>
+        <h1 class="title"><a href="{{ .RelPermalink }}"><span class="title-pilcrow">#</span> <span {{- if .Draft }} class="draft"{{end}}>{{ .Title | markdownify }}</span></a></h1>
+        <div class="tips">
+            <span class="date">
+                <time datetime="{{ .PublishDate }}">{{ .PublishDate.Format "2006/01/02" }}</time>
+            </span>
+        {{ with .Params.Categories }}
+            <span>Categories:</span>
+            {{ range first 2 . }}
+                <a class="categories" href="{{ "categories/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+            {{ end }}
+        {{ end }}
+        {{ with .Params.Tags }}
+            <span>Tags:</span>
+            {{ range first 5 . }}
+                <a class="tags" href="{{ "tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+            {{ end }}
+        {{ end }}
+        </div>
+        </hgroup>
+        <span class="summary">{{ .Summary }}</span>
+    </article>
+{{ end }}
+
+{{ partial "pagination.html" . }}
+</main>
+{{ end }}

@@ -1,0 +1,28 @@
+{{ define "main" }}
+<main class="tags">
+    <h2>{{ .Title }}</h2>
+    {{ if trim .Content " \n" }}
+    <span class="content archive-hint">{{ .Content }}</span>
+    {{ end }}
+    <section id="archive">
+    {{ range .Data.Pages.GroupByDate "2006" }}
+        <section class="group">
+            <h3 class="key">{{ .Key }}</h3>
+            <dl>
+            {{ range .Pages }}
+                <dt><time class="date" datetime="{{ .PublishDate }}">{{ .PublishDate.Format "01/02" }}</time></dt>
+                <dd {{if .Draft}} class="draft" {{end}} class="title">
+                    <a href="{{ .Permalink }}">{{ .Title | markdownify }}</a>
+                    {{ with .Params.tags }}
+                        {{ range . }}
+                            <a class="tags" href="{{ "tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+                        {{ end }}
+                    {{ end }}
+                </dd>
+            {{ end }}
+            </dl>
+        </section>
+    {{ end }}
+    </section>
+</main>
+{{ end }}

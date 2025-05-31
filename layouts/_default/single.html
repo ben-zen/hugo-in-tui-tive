@@ -1,0 +1,40 @@
+{{ define "main" }}
+
+<main class="single">
+    <hgroup>
+        <h1 class="title {{ if .Draft }} draft {{ end }}"><span>{{ .Title | markdownify }}</span></h1>
+
+        <div class="tip">
+            <time datetime="{{ .PublishDate }}">{{ .PublishDate.Format "2006/01/02" }}</time>
+            <span class="split">·</span>
+            <span>{{ .WordCount }} words</span>
+            <span class="split">·</span>
+            <span>{{ .ReadingTime }} minutes to read</span>
+        </div>
+        <aside class="taxonomies">
+        {{ with .Params.categories }}
+        <div>
+            Categories:
+            {{ range . }}
+                <a href="{{ "categories/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+            {{ end }}
+        </div>
+        {{ end }}
+
+        {{ with .Params.tags }}
+            <div>
+                Tags:
+                {{ range . }}
+                    <a href="{{ "tags/" | relURL }}{{ . | urlize }}">{{ . }}</a>
+                {{ end }}
+            </div>
+        {{ end }}
+        </aside>
+    </hgroup>
+
+    <hr />
+
+    {{ .Content }}
+</main>
+
+{{ end }}

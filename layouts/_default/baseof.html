@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html {{ with .Site.LanguageCode }} lang="{{.}}" {{ end }}>
+    <head>
+        <title>{{ with .Params.Title }}{{ . | markdownify | plainify | safeHTML }} | {{ end }}{{ .Site.Title }}</title>
+        {{ partial "head.html" . }}
+    </head>
+
+    <body>
+        {{ partial "header.html" . }}
+        <div class="main-wrapper">
+            {{ block "main" . }}{{ end }}
+            <aside class="side">
+                {{ range .Site.Sections }}
+                    {{ partial "side-recent.html" . }}
+                {{ end }}
+                {{ partial "side-tags.html" . }}
+            </aside>
+        </div>
+        {{ partial "footer.html" . }}
+    </body>
+</html>

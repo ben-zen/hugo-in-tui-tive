@@ -1,0 +1,35 @@
+<footer>
+    <p class="footer-row">
+    {{ range .Site.Sections }}
+        {{ $section := . }}
+        {{ with .OutputFormats.Get "rss" }}
+            <a class="footer-item" href="{{ .Permalink }}">
+                <i class="fa-solid fa-square-rss"></i>
+                {{ $section.Section | humanize }} feed
+            </a>
+        {{ end }}
+    {{ end }}
+
+    {{ if not (or .IsHome .IsSection) }}
+        {{ $term := . }}
+        {{ with .OutputFormats.Get "rss" }}
+            <a class="footer-item" href="{{ .Permalink }}">
+                "{{ $term.Title }}" feed
+                <i class="fa-solid fa-square-rss"></i>
+            </a>
+        {{ end }}
+    {{ end }}
+    </p>
+
+{{ range .Site.Params.footer_rows }}
+    <p class="footer-row">
+    {{ range .items }}
+        {{ with .pre }}
+            {{ . | safeHTML }}
+        {{ else }}
+            <a class="footer-item" href="{{ .url }}">{{ .name }}</a>
+        {{ end }}
+    {{ end }}
+    </p>
+{{ end }}
+</footer>

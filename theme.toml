@@ -1,0 +1,28 @@
+name = "InTUItive"
+license = "MIT"
+licenselink = "https://mit-license.org/"
+description = "Bringing back TUIs in the internet era, with a focus on accessible design."
+
+# The home page of the theme, where the source can be found.
+homepage = "https://github.com/ben-zen/hugo-theme-in-tui-tive/"
+
+# If you have a running demo of the theme.
+# demosite = "https://leafee98.github.io/hugo-theme-flat/"
+
+tags = ["blog", "personal", "light", "dark", "reactive"]
+features = []
+
+# If the theme has multiple authors
+#authors = [
+#  {name = "", homepage = ""},
+#]
+
+[author]
+    name = "ben-zen"
+    homepage = "https://ben.zen.sdf.org/"
+
+# Little of the original remains
+[original]
+    name = "leafee98"
+    homepage = "https://leafee98.com"
+    repo = "https://github.com/leafee98/hugo-theme-flat"

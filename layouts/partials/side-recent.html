@@ -1,0 +1,12 @@
+<section class="side-recent">
+    <h2 class="side-title">Recent {{ .Section | humanize }}</h2>
+    <hr />
+
+    <ul>
+        {{ range first 5 .RegularPages.ByDate.Reverse }}
+            <li>
+                <a {{if .Draft}}class="draft"{{end}} href="{{ .RelPermalink }}">{{ .Title | markdownify }}</a>
+            </li>
+        {{ end }}
+    </ul>
+</section>
