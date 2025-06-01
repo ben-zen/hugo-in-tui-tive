@@ -3,8 +3,10 @@ theme = "hugo-in-tui-tive"
 themesDir = "../.."
 enableRobotsTXT = true
 hasCJKLanguage = true
-paginate = 6
 baseURL = ""
+
+[pagination]
+pagerSize = 6
 
 # these values are hugo built in markup config
 [markup.highlight]

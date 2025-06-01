@@ -342,8 +342,17 @@ footer {
 
 .front-page article .title a, li.title a { text-decoration: none; color: var(--color-title); }
 .front-page article .title a:hover { color: var(--color-paratext-link); }
-.front-page article .tips a { text-decoration: dashed underline; color: var(--color-paratext-link) }
-.front-page article .tips a:hover { color: var(--color-paratext-link-hover) }
+
+.front-page article {
+  .tips a, .summary a {
+    text-decoration: dashed underline;
+    color: var(--color-paratext-link);
+  }
+
+  .tips a:hover, .summary a:hover {
+    color: var(--color-paratext-link-hover);
+  }
+}
 
 .title-pilcrow { color: var(--color-paratext-link); }
 
@@ -423,7 +432,7 @@ main.single > hgroup > p {
 }
 
 .single a {
-  text-decoration: none;
+  text-decoration: dashed underline;
   color: var(--color-paratext-link);
 }
 
