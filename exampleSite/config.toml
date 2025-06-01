@@ -35,22 +35,27 @@ mainSections = ['posts']
 # simple_view=true
 
 
-# you can set multi row of footers like these
-[[params.footer_rows]]
-[[params.footer_rows.items]]
-name = "Creative Commons Attribution 4.0 International"
-url = "https://creativecommons.org/licenses/by/4.0/"
-pre = "Copyright <a href=\"https://creativecommons.org/licenses/by/4.0/\">CC BY-4.0</a>"
+# To set multiple footer rows, set up each row like so:
+# [[params.footer_rows]]
+# name/url/pre = "contents"
+#
+# The `pre` block lets you define your own format for the footer row entirely,
+# used here to insert icons from FontAwesome.
 
 [[params.footer_rows]]
-[[params.footer_rows.items]]
+name = "Creative Commons Attribution 4.0 International"
+url = "https://creativecommons.org/licenses/by/4.0/"
+pre = "Copyright <a href='https://creativecommons.org/licenses/by/4.0/'><i class='fa-brands fa-creative-commons'></i>&nbsp;<i class='fa-brands fa-creative-commons-by'></i>&nbsp;CC BY-4.0</a>"
+
+[[params.footer_rows]]
 name = "Hugo"
 url = "https://gohugo.io"
-pre = "Powered by <a href=\"https://gohugo.io\">Hugo</a>"
-[[params.footer_rows.items]]
+pre = "Powered by <a href='https://gohugo.io'>Hugo</a>"
+
+[[params.footer_rows]]
 name = "inTUItive theme"
 url = "https://github.com/ben-zen/hugo-in-tui-tive/"
-pre = "Theme <a href=\"https://github.com/ben-zen/hugo-in-tui-tive/\">hugo-in-tui-tive</a>"
+pre = "Theme <a href='https://github.com/ben-zen/hugo-in-tui-tive/'><i class='fa-brands fa-square-github'></i>&nbsp;ben-zen/hugo-in-tui-tive</a>"
 
 
 [[menus.main]]

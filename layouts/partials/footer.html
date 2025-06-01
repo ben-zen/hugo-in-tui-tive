@@ -23,12 +23,10 @@
 
 {{ range .Site.Params.footer_rows }}
     <p class="footer-row">
-    {{ range .items }}
-        {{ with .pre }}
-            {{ . | safeHTML }}
-        {{ else }}
-            <a class="footer-item" href="{{ .url }}">{{ .name }}</a>
-        {{ end }}
+    {{ with .pre }}
+        {{ . | safeHTML }}
+    {{ else }}
+        <a class="footer-item" href="{{ .url }}">{{ .name }}</a>
     {{ end }}
     </p>
 {{ end }}
