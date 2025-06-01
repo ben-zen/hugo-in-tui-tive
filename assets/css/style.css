@@ -310,7 +310,7 @@ footer {
   color: var(--color-paratext);
   a {
     color: var(--color-paratext-link);
-    text-decoration: none;
+    text-decoration:dashed underline;
   }
 
   img {
@@ -342,7 +342,7 @@ footer {
 
 .front-page article .title a, li.title a { text-decoration: none; color: var(--color-title); }
 .front-page article .title a:hover { color: var(--color-paratext-link); }
-.front-page article .tips a { text-decoration: none; color: var(--color-paratext-link) }
+.front-page article .tips a { text-decoration: dashed underline; color: var(--color-paratext-link) }
 .front-page article .tips a:hover { color: var(--color-paratext-link-hover) }
 
 .title-pilcrow { color: var(--color-paratext-link); }

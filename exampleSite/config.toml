@@ -50,7 +50,7 @@ pre = "Copyright <a href='https://creativecommons.org/licenses/by/4.0/'><i class
 [[params.footer_rows]]
 name = "Hugo"
 url = "https://gohugo.io"
-pre = "Powered by <a href='https://gohugo.io'>Hugo</a>"
+pre = "Powered by <a href='https://gohugo.io'><i class='fa-solid fa-rocket'></i>&nbsp;Hugo</a>"
 
 [[params.footer_rows]]
 name = "inTUItive theme"
