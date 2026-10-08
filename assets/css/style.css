@@ -590,7 +590,7 @@ main.single blockquote {
 
 main.single table {
   width: 100%;
-  height: 60vh;
+  max-height: 60vh;
   margin: 40px 0;
   border-collapse: collapse;
   line-height: 1.5em;
@@ -668,6 +668,14 @@ main.single pre {
 }
 main.single .markdown-image img {
   max-width: 100%;
+}
+
+main.single p img {
+    width: 60%;
+}
+
+main.single p:has(img) {
+    text-align: center;
 }
 
 main.single .anchor {
